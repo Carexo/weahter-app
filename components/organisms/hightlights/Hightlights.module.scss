@@ -1,0 +1,12 @@
+.hightlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 20.5rem);
+  justify-content: center;
+  row-gap: 2.5rem;
+  column-gap: 3rem;
+
+  p {
+    grid-column: 1 / -1;
+    padding-bottom: 1rem;
+  }
+}

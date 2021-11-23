@@ -1,0 +1,45 @@
+@import "../../../styles/variables";
+
+.results {
+  padding: 0.5rem 0rem;
+  margin: 2rem 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+
+  li {
+    width: clamp(20rem, 80%, 22rem);
+    margin-bottom: 0.8rem;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: 1rem 1rem;
+    width: 100%;
+    color: $white;
+    text-decoration: none;
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px $darkestGray;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 2px $darkestGray;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 0.5rem;
+      background: url("../../../public/images/chevron-right.svg");
+      background-size: cover;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

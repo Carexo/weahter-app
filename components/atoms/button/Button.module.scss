@@ -1,0 +1,15 @@
+@import "../../../styles/variables";
+
+.button {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: $base;
+
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+}
+
+.button.disabled {
+  cursor: not-allowed;
+}

@@ -1,0 +1,88 @@
+@import "../../../styles/variables";
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  padding: 1.2rem 0.8rem;
+
+  button {
+    color: $white;
+    font-weight: 500;
+    background-color: $darkGray;
+  }
+}
+
+.image-container {
+  position: relative;
+  margin-top: 3.5rem;
+  width: 100%;
+  text-align: center;
+
+  .image {
+    width: 100%;
+  }
+
+  &::before {
+    content: "";
+    opacity: 0.1;
+    width: 100%;
+    left: 0;
+    top: -5rem;
+
+    height: 376px;
+    display: block;
+    position: absolute;
+    background-image: url("../../../public/images/Cloud-background.png");
+    //background-size: cover;
+    //background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.description {
+  height: clamp(20rem, 60vh, 27rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 3rem;
+
+  color: $gray;
+  font-size: $lg;
+
+  p {
+    margin: 0;
+  }
+
+  .temperature {
+    display: flex;
+    align-items: center;
+
+    p {
+      color: $white;
+      font-size: $xl4;
+    }
+  }
+
+  .type {
+    font-size: $xl;
+  }
+
+  .date {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+}

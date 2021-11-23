@@ -1,0 +1,20 @@
+@import "../../../styles/variables";
+
+.hightlight {
+  background-color: $primaryPurple;
+  width: 20.5rem;
+  min-height: 10rem;
+  max-height: 12.75rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .value {
+    p {
+      padding: 0.5rem 0.2rem;
+      display: inline-block;
+    }
+  }
+}
