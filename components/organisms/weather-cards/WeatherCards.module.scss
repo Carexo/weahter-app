@@ -1,4 +1,16 @@
 .cards {
-  display: flex;
-  flex-wrap: wrap;
+  margin: 2rem 3rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 7.5rem);
+  column-gap: 1.625rem;
+  row-gap: 2rem;
+
+  justify-content: center;
+}
+
+@media screen and (min-width: 849px) {
+  .cards {
+    grid-template-columns: repeat(5, 7.5rem);
+  }
 }

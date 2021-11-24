@@ -12,7 +12,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <SearchNav />
         <HeaderInfo />
       </Header>
-      <main>
+      <main
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          // alignItems: "center",
+        }}
+      >
         {children}
         <Footer />
       </main>

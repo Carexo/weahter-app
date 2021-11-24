@@ -13,6 +13,45 @@ const Home: NextPage = () => {
         {/*<SearchNav />*/}
         {/*<HeaderInfo />*/}
       </Header>
+      <WeatherCards
+        forwardsWeather={[
+          {
+            weatherState: "Clear",
+            maxTemp: 10,
+            minTemp: 5,
+            date: new Date("2021-11-21"),
+            id: "1",
+          },
+          {
+            weatherState: "Clear",
+            maxTemp: 10,
+            minTemp: 5,
+            date: new Date("2021-11-21"),
+            id: "2",
+          },
+          {
+            weatherState: "Clear",
+            maxTemp: 10,
+            minTemp: 5,
+            date: new Date("2021-11-21"),
+            id: "3",
+          },
+          {
+            weatherState: "Clear",
+            maxTemp: 10,
+            minTemp: 5,
+            date: new Date("2021-11-21"),
+            id: "4",
+          },
+          {
+            weatherState: "Clear",
+            maxTemp: 10,
+            minTemp: 5,
+            date: new Date("2021-11-21"),
+            id: "5",
+          },
+        ]}
+      />
       <Hightlights
         windStatus={"7"}
         humidity={"84"}

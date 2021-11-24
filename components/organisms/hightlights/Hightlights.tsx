@@ -13,7 +13,7 @@ const Hightlights: React.FC<HightlightsProps> = ({
   return (
     <section className={classes.hightlights}>
       <Typography el={"p"} size={24} weight={700}>
-        Today's Hightlights
+        Today&apos;s Hightlights
       </Typography>
       <Hightlight title={"Wind Status"} value={windStatus} unit={"mph"} />
       <Hightlight title={"Humidity"} value={humidity} unit={"%"} />

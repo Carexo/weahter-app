@@ -27,6 +27,7 @@ const HeaderInfo = () => {
       <div className={classes["image-container"]}>
         <Image
           src="/images/Shower.png"
+          alt="shower image"
           className={classes.image}
           width={170}
           height={197}
