@@ -9,3 +9,9 @@
     grid-column: 1 / -1;
   }
 }
+
+@media screen and (min-width: 1075px) {
+  .hightlights {
+    grid-template-columns: repeat(2, 20.5rem);
+  }
+}

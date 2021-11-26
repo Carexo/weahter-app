@@ -12,11 +12,15 @@ import { mdiTemperatureCelsius } from "@mdi/js";
 import { mdiCrosshairsGps } from "@mdi/js";
 import { mdiMapMarker } from "@mdi/js";
 
-const HeaderInfo = () => {
+const HeaderInfo: React.FC<{ handleClose: () => void }> = ({ handleClose }) => {
+  const handleClick = () => {
+    handleClose();
+  };
+
   return (
     <Fragment>
-      <div className={classes.nav}>
-        <Button onClick={() => {}}>Search for place</Button>
+      <div className={classes.header}>
+        <Button onClick={handleClick}>Search for place</Button>
         <CircleIcon
           path={mdiCrosshairsGps}
           color="#E7E7EB"

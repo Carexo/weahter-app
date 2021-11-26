@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
 
-export interface NavProps {
+export interface MainProps {
   children: ReactNode;
 }

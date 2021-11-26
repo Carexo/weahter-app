@@ -4,13 +4,24 @@
   background-color: $primaryPurple;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-direction: column;
   width: 100%;
+  max-height: 51rem;
 
   .close {
     position: absolute;
     right: 1rem;
     top: 0.5rem;
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .header {
+    width: clamp(10rem, 30%, 35rem);
+    height: 100%;
+    min-height: 47rem;
+    max-height: 100%;
   }
 }

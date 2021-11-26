@@ -12,3 +12,15 @@ body {
   padding: 0;
   margin: 0;
 }
+
+#__next {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 1280px) {
+  #__next {
+    height: 100vh;
+    flex-direction: row;
+  }
+}

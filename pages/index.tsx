@@ -9,10 +9,6 @@ import Hightlights from "../components/organisms/hightlights/Hightlights";
 const Home: NextPage = () => {
   return (
     <Fragment>
-      <Header>
-        {/*<SearchNav />*/}
-        {/*<HeaderInfo />*/}
-      </Header>
       <WeatherCards
         forwardsWeather={[
           {

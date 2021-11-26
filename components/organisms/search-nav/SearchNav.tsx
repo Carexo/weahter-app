@@ -7,9 +7,9 @@ import Button from "../../atoms/button/Button";
 import { mdiClose } from "@mdi/js";
 import classes from "./SearchNav.module.scss";
 
-const SearchNav: React.FC = () => {
+const SearchNav: React.FC<{ handleClose: () => void }> = ({ handleClose }) => {
   const handleClick = () => {
-    console.log("click");
+    handleClose();
   };
 
   return (
@@ -30,7 +30,7 @@ const SearchNav: React.FC = () => {
             "ssssfdfd",
             "ssssdadsa",
             "fdfdfd",
-            "gjlksedfh",
+            "fjdklfjlkasj",
           ]}
         />
       </nav>

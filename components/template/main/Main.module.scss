@@ -1,0 +1,12 @@
+.main {
+  min-height: 47.5rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+  }
+}

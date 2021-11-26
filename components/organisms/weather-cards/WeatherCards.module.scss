@@ -1,4 +1,36 @@
+@import "../../../styles/variables";
+
 .cards {
+  .nav-temperature {
+    grid-column: 1 / -1;
+
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+      margin-left: 0.8rem;
+    }
+  }
+
+  .celsius {
+    button:first-of-type {
+      background-color: $white;
+    }
+
+    button:last-of-type {
+      background-color: #585676;
+    }
+  }
+
+  .fahrenheit {
+    button:first-of-type {
+      background-color: #585676;
+    }
+    button:last-of-type {
+      background-color: $white;
+    }
+  }
+
   margin: 2rem 3rem;
 
   display: grid;
