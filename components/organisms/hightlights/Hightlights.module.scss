@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .hightlights {
   display: grid;
   grid-template-columns: repeat(auto-fill, 20.5rem);
@@ -7,6 +9,59 @@
 
   p {
     grid-column: 1 / -1;
+  }
+}
+
+.wind-direction {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    width: 1.9rem;
+    height: 1.9rem;
+
+    margin-right: 1rem;
+    background-color: $darkGray;
+  }
+}
+
+.humidity-bar {
+  margin-top: 1rem;
+
+  .scale {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p:last-of-type {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .bar {
+    width: 14rem;
+    height: 0.5rem;
+    background-color: $white;
+    border-radius: 5rem;
+    box-sizing: border-box;
+
+    margin: 0.2rem 0;
+
+    &:before {
+      content: "";
+      width: var(--humidity-width);
+      position: absolute;
+      box-shadow: inset 0 0 1px 1px rgba(115, 102, 13, 0.25);
+      background-color: #ffec65;
+      height: 0.5rem;
+      border-radius: 5rem 0 0 5rem;
+    }
   }
 }
 

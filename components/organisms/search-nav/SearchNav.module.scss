@@ -7,11 +7,22 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  min-height: 51rem;
 
   .close {
     position: absolute;
     right: 1rem;
     top: 0.7rem;
     padding: 0;
+    transition: transform 300ms;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+
+  .notification {
+    margin-top: 5rem;
   }
 }

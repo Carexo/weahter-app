@@ -6,7 +6,13 @@ const Footer: React.FC = () => {
   return (
     <footer className={classes.footer}>
       <Typography el={"p"} color="lightGray" size={14}>
-        created by <b>Marceli</b> - devChallenges.io
+        created by{" "}
+        <b>
+          <a href="https://github.com/Carexo" target="_blank" rel="noopener">
+            Carexo
+          </a>
+        </b>{" "}
+        - designed by devChallenges.io
       </Typography>
     </footer>
   );

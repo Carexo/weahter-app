@@ -11,6 +11,12 @@
     color: $white;
     font-weight: 500;
     background-color: $darkGray;
+    transition: background-color 300ms;
+
+    &:hover,
+    &:focus {
+      background-color: #5b5f73;
+    }
   }
 }
 
@@ -22,6 +28,7 @@
 
   .image {
     width: 100%;
+    animation: fade 500ms;
   }
 
   &::before {
@@ -54,25 +61,15 @@
     margin: 0;
   }
 
+  p,
+  svg,
+  .location {
+    animation: fade 500ms;
+  }
+
   .temperature {
     display: flex;
     align-items: center;
-
-    p {
-      color: $white;
-      font-size: $xl4;
-    }
-  }
-
-  .type {
-    font-size: $xl;
-  }
-
-  .date {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-evenly;
   }
 
   .location {

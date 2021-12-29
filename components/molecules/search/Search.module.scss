@@ -35,5 +35,11 @@
   button {
     color: $white;
     background-color: $blue;
+    transition: background-color 300ms;
+
+    &:hover,
+    &:focus {
+      background-color: #2f3ca6;
+    }
   }
 }

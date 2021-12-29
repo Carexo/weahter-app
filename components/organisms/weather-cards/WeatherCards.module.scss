@@ -9,6 +9,7 @@
 
     button {
       margin-left: 0.8rem;
+      transition: background 300ms;
     }
   }
 
@@ -19,13 +20,24 @@
 
     button:last-of-type {
       background-color: #585676;
+
+      &:hover,
+      &:focus {
+        background-color: #484572;
+      }
     }
   }
 
   .fahrenheit {
     button:first-of-type {
       background-color: #585676;
+
+      &:hover,
+      &:focus {
+        background-color: #484572;
+      }
     }
+
     button:last-of-type {
       background-color: $white;
     }

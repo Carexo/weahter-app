@@ -5,10 +5,16 @@ import classes from "./CircleIcon.module.scss";
 
 import { CircleIconProps } from "./CircleIcon.types";
 
-const CircleIcon: React.FC<CircleIconProps> = ({ path, color, onClick }) => {
+const CircleIcon: React.FC<CircleIconProps> = ({
+  path,
+  color,
+  size,
+  onClick,
+}) => {
+  const iconSize = size || 1;
   return (
     <Button onClick={onClick} className={classes["circle-icon"]}>
-      <Icon path={path} size={1} color={color} />
+      <Icon path={path} size={iconSize} color={color} />
     </Button>
   );
 };

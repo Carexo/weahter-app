@@ -17,3 +17,20 @@ $xl: 36px;
 $xl2: 48px;
 $xl3: 64px;
 $xl4: 144px;
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  25% {
+    opacity: 0.25;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

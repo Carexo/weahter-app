@@ -4,6 +4,7 @@
 
 @media screen and (min-width: 1280px) {
   .main {
+    margin-left: clamp(10rem, 30%, 35rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;

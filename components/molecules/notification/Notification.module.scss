@@ -1,0 +1,46 @@
+.notification {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  width: 14rem;
+  height: 7rem;
+
+  background-color: rgba(255, 224, 224, 0.9);
+
+  h2 {
+    padding: 0.5rem 0;
+  }
+
+  p,
+  h2 {
+    padding: 0.25rem 0.5rem;
+    color: #ba3943;
+  }
+}
+
+.notification-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.notification-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.notification-exit {
+  opacity: 1;
+}
+
+.notification-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+}

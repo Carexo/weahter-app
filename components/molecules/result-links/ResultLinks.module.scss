@@ -1,7 +1,17 @@
 @import "../../../styles/variables";
 
+@keyframes fade-opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 .results {
-  padding: 0.5rem 0rem;
+  padding: 0.5rem 0;
   margin: 2rem 0;
   list-style: none;
 
@@ -13,6 +23,14 @@
   li {
     width: clamp(20rem, 80%, 22rem);
     margin-bottom: 0.8rem;
+
+    animation: fade-opacity 500ms;
+  }
+
+  .current {
+    a {
+      box-shadow: 0 0 0 2px $blue;
+    }
   }
 
   a {
@@ -22,6 +40,7 @@
     width: 100%;
     color: $white;
     text-decoration: none;
+    transition: box-shadow 300ms;
 
     &:focus {
       outline: none;

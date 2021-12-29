@@ -10,7 +10,9 @@ import { mdiMagnify } from "@mdi/js";
 const Search: React.FC<SearchProps> = ({ onClick, disabled }) => {
   const [value, setValue] = useState("");
 
-  const handleClick = () => {
+  const handleClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+
     onClick(value);
     setValue("");
   };
@@ -20,7 +22,7 @@ const Search: React.FC<SearchProps> = ({ onClick, disabled }) => {
   };
 
   return (
-    <div className={classes.search}>
+    <form className={classes.search}>
       <div className={classes.input}>
         <Icon path={mdiMagnify} size={0.8} color="#616475" />
         <Input title="search location" value={value} onChange={handleChange} />
@@ -28,7 +30,7 @@ const Search: React.FC<SearchProps> = ({ onClick, disabled }) => {
       <Button onClick={handleClick} type="submit" disabled={disabled}>
         Search
       </Button>
-    </div>
+    </form>
   );
 };
 

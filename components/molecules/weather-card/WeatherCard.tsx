@@ -4,9 +4,6 @@ import classes from "./WeatherCard.module.scss";
 import Image from "next/image";
 import Icon from "@mdi/react";
 
-import { mdiTemperatureFahrenheit } from "@mdi/js";
-import { mdiTemperatureCelsius } from "@mdi/js";
-
 import Typography from "../../atoms/typography/Typography";
 
 const WeatherCard: React.FC<WeatherCardProps> = ({
@@ -14,6 +11,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   minTemp,
   maxTemp,
   date,
+  temperatureUnit,
 }) => {
   return (
     <div className={classes["weather-card"]}>
@@ -29,11 +27,11 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       <div className={classes.temperatures}>
         <div className={classes.temperature}>
           <Typography el={"p"}>{maxTemp}</Typography>
-          <Icon path={mdiTemperatureCelsius} size={0.7} />
+          <Icon path={temperatureUnit} size={0.7} />
         </div>
         <div className={classes.temperature}>
           <Typography el={"p"}>{minTemp}</Typography>
-          <Icon path={mdiTemperatureCelsius} size={0.7} />
+          <Icon path={temperatureUnit} size={0.7} />
         </div>
       </div>
     </div>

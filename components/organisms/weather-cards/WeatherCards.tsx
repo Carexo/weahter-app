@@ -1,56 +1,76 @@
 import React from "react";
-import WeatherCard from "../../molecules/weather-card/WeatherCard";
-import { WeatherCardsProps } from "./WeatherCards.types";
-
-import classes from "./WeatherCards.module.scss";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import classnames from "classnames";
+import uniqueId from "lodash.uniqueid";
+
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import {
+  changeToCelsius,
+  changeToFahrenheit,
+  selectForwardsWeather,
+  selectStatus,
+  selectTemperatureUnit,
+} from "../../../store/reducers/weather/weatherSlice";
+
+import WeatherCard from "../../molecules/weather-card/WeatherCard";
 import CircleIcon from "../../atoms/circle-icon/CircleIcon";
+import classes from "./WeatherCards.module.scss";
 import { mdiTemperatureFahrenheit } from "@mdi/js";
 import { mdiTemperatureCelsius } from "@mdi/js";
 
-const WeatherCards: React.FC<WeatherCardsProps> = ({ forwardsWeather }) => {
+const WeatherCards: React.FC = () => {
+  const dispatch = useAppDispatch();
+  const forwardsWeather =
+    useAppSelector(selectForwardsWeather) || new Array(5).fill(null);
+  const { currentUnit, iconPath } = useAppSelector(selectTemperatureUnit);
+  const status = useAppSelector(selectStatus);
+
+  const loading = status.type === "loading";
+
+  const unitColors = {
+    fahrenheit: currentUnit === "fahrenheit" ? "#110E3C" : "#E7E7EB",
+    celsius: currentUnit === "celsius" ? "#110E3C" : "#E7E7EB",
+  };
+
   return (
     <div className={classes.cards}>
-      <div className={classnames(classes["nav-temperature"], classes.celsius)}>
+      <div
+        className={classnames(classes["nav-temperature"], classes[currentUnit])}
+      >
         <CircleIcon
           path={mdiTemperatureCelsius}
-          color="#110E3C"
-          onClick={() => {}}
+          color={unitColors.celsius}
+          onClick={() => {
+            dispatch(changeToCelsius());
+          }}
         />
         <CircleIcon
           path={mdiTemperatureFahrenheit}
-          color="#E7E7EB"
-          onClick={() => {}}
+          color={unitColors.fahrenheit}
+          onClick={() => {
+            dispatch(changeToFahrenheit());
+          }}
         />
       </div>
-      {forwardsWeather.map((weather) => {
-        let date: string;
-
-        const currentDate = new Date().toLocaleDateString("en-GB", {
-          weekday: "short",
-          day: "numeric",
-          month: "short",
-        });
-        date = weather.date.toLocaleDateString("en-GB", {
-          weekday: "short",
-          day: "numeric",
-          month: "short",
-        });
-
-        if (currentDate === date) {
-          date = "Today";
-        }
-
-        return (
-          <WeatherCard
-            key={weather.id}
-            weatherState={weather.weatherState}
-            minTemp={weather.minTemp}
-            maxTemp={weather.maxTemp}
-            date={date}
-          />
-        );
-      })}
+      {forwardsWeather &&
+        forwardsWeather.map((weather, index) => {
+          if (!weather || loading) {
+            return (
+              <Skeleton key={uniqueId("card_")} width={120} height={176} />
+            );
+          }
+          return (
+            <WeatherCard
+              key={weather.id}
+              weatherState={weather.weather_state_name}
+              minTemp={weather.min_temp}
+              maxTemp={weather.max_temp}
+              date={weather.short_date}
+              temperatureUnit={iconPath}
+            />
+          );
+        })}
     </div>
   );
 };

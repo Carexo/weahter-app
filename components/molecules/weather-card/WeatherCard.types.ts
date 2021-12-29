@@ -3,4 +3,5 @@ export interface WeatherCardProps {
   minTemp: number;
   maxTemp: number;
   date: string;
+  temperatureUnit: string;
 }
