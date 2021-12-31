@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <Typography el={"p"} color="lightGray" size={14}>
         created by{" "}
         <b>
-          <a href="https://github.com/Carexo" target="_blank" rel="noopener">
+          <a href="https://github.com/Carexo" target="_blank" rel="noreferrer">
             Carexo
           </a>
         </b>{" "}
