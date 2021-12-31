@@ -30,6 +30,8 @@ const Hightlights: React.FC = () => {
   );
 
   // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
   return (
     <section className={classes.hightlights}>
       <Typography el={"p"} size={24} weight={700}>
@@ -80,10 +82,11 @@ const Hightlights: React.FC = () => {
               <div
                 className={classes.bar}
                 style={{
+                  // @ts-ignore
                   "--humidity-width": `${weatherToday.humidity * 0.14}rem`,
                 }}
                 role="presentation"
-              ></div>
+              />
 
               <Typography el={"p"} size={12}>
                 %
