@@ -1,7 +1,7 @@
 
 
   <p align="right">
-    <a href="https://vercel.com/">
+    <a href="https://weahter-app-ire5y35u3-carexo.vercel.app/">
       Demo
     </a>
   </p>
@@ -25,7 +25,7 @@
 
 Weather App allow you to check today weather forecast and for the following days with detail like humidity, wind direction, visibility and air pressure
 
-Demo of this project is [here](https://vercel.com/)
+Demo of this project is [here](https://weahter-app-ire5y35u3-carexo.vercel.app/)
 
 Because of this project I consolidated my Redux Toolkit and NextJS knowledge
 
