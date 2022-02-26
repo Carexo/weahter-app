@@ -23,7 +23,7 @@
 ![gif with overview](https://media4.giphy.com/media/1v1OykSW33iqmHviLc/giphy.gif?cid=790b7611085ff20cc86894c367a757f3834948cd04b4fc4b&rid=giphy.gif&ct=g)
 
 
-Weather App allow you to check today weather forecast and for the following days with detail like humidity, wind direction, visibility and air pressure
+Weather App allows you to check today's weather forecast and for the following days with detail like humidity, wind direction, visibility and air pressure
 
 Demo of this project is [here](https://weahter-app-ire5y35u3-carexo.vercel.app/)
 
