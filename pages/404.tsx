@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import Typography from "../components/atoms/typography/Typography";
-
 const Custom404 = () => {
   const router = useRouter();
 

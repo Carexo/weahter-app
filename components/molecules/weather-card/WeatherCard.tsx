@@ -21,7 +21,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         src={`/images/${weatherState.replace(" ", "")}.png`}
         alt={weatherState}
         className={classes.image}
-        width={55}
+        width={63}
         height={63}
       />
       <div className={classes.temperatures}>

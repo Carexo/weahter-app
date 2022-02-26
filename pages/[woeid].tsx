@@ -18,6 +18,7 @@ const Weather: NextPage = () => {
     if (!woeid || typeof woeid !== "string") {
       return;
     }
+
     dispatch(fetchWeatherByLocation(woeid));
     dispatch(closeNav());
   }, [woeid, dispatch]);

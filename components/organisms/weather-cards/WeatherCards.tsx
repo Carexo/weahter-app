@@ -39,6 +39,7 @@ const WeatherCards: React.FC = () => {
         className={classnames(classes["nav-temperature"], classes[currentUnit])}
       >
         <CircleIcon
+          label="Switch temperature to Celsius"
           path={mdiTemperatureCelsius}
           color={unitColors.celsius}
           onClick={() => {
@@ -46,6 +47,7 @@ const WeatherCards: React.FC = () => {
           }}
         />
         <CircleIcon
+          label="Switch temperature to Fahrenheit"
           path={mdiTemperatureFahrenheit}
           color={unitColors.fahrenheit}
           onClick={() => {

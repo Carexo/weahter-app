@@ -50,6 +50,7 @@ const HeaderInfo: React.FC = () => {
       <div className={classes.header}>
         <Button onClick={handleOpenNav}>Search for place</Button>
         <CircleIcon
+          label="Search place from your geolocation"
           path={mdiCrosshairsGps}
           color="#E7E7EB"
           onClick={handleGetLocation}
@@ -67,8 +68,8 @@ const HeaderInfo: React.FC = () => {
             )}.png`}
             alt={`${todayWeather.weather_state_name} image`}
             className={classes.image}
-            width={170}
-            height={197}
+            width={198}
+            height={198}
           />
         )}
       </div>

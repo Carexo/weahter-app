@@ -7,4 +7,10 @@
   border-radius: 50%;
   width: 40px;
   height: 40px;
+
+  span {
+    text-indent: -9999px;
+    white-space: nowrap;
+    font-size: 0;
+  }
 }

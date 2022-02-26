@@ -4,7 +4,7 @@ module.exports = {
   reactStrictMode: true,
   env: {
     weatherApiUrl: "https://www.metaweather.com/api",
-    proxyUrl: "https://boiling-reaches-72231.herokuapp.com",
+    proxyUrl: "https://still-journey-55420.herokuapp.com",
   },
   async redirects() {
     return [
