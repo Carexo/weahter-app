@@ -8,6 +8,7 @@ import Typography from "../../atoms/typography/Typography";
 
 const WeatherCard: React.FC<WeatherCardProps> = ({
   weatherState,
+    weatherImage,
   minTemp,
   maxTemp,
   date,
@@ -18,7 +19,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       <Typography el={"p"}>{date}</Typography>
 
       <Image
-        src={`/images/${weatherState.replace(" ", "")}.png`}
+        src={`https:${weatherImage}`}
         alt={weatherState}
         className={classes.image}
         width={63}

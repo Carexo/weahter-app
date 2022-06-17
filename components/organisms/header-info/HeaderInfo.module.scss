@@ -29,6 +29,7 @@
   .image {
     width: 100%;
     animation: fade 500ms;
+    filter: blur(1px);
   }
 
   &::before {

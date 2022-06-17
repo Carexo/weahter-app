@@ -29,9 +29,6 @@ const Hightlights: React.FC = () => {
     </>
   );
 
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
   return (
     <section className={classes.hightlights}>
       <Typography el={"p"} size={24} weight={700}>
@@ -43,8 +40,8 @@ const Hightlights: React.FC = () => {
         <>
           <Hightlight
             title={"Wind Status"}
-            value={weatherToday.wind_speed}
-            unit={"mph"}
+            value={weatherToday.wind_kph}
+            unit={"kph"}
             size={"extended"}
           >
             <div className={classes["wind-direction"]}>
@@ -57,7 +54,7 @@ const Hightlights: React.FC = () => {
                 />
               </span>
               <Typography el={"p"}>
-                {weatherToday.wind_direction_compass}
+                {weatherToday.wind_dir}
               </Typography>
             </div>
           </Hightlight>
@@ -95,13 +92,13 @@ const Hightlights: React.FC = () => {
           </Hightlight>
           <Hightlight
             title={"Visibility"}
-            value={weatherToday.visibility}
-            unit={"miles"}
+            value={weatherToday.vis_km}
+            unit={"kilometers"}
             size={"regular"}
           />
           <Hightlight
             title={"Air Pressure"}
-            value={weatherToday.air_pressure}
+            value={weatherToday.pressure_mb}
             unit={"mb"}
             size={"regular"}
           />

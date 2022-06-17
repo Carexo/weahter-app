@@ -24,8 +24,10 @@ const headerSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(searchLocations.fulfilled, (state, action) => {
       state.searchLocationsResult = action.payload.map((result) => ({
-        title: result.title,
-        woeid: result.woeid,
+        id: result.id,
+        name: result.name,
+        lat: result.lat,
+        lon: result.lon,
       }));
       state.status = { type: "pending" };
     });

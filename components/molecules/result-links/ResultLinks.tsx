@@ -6,17 +6,17 @@ import { ResultLinksProps } from "./ResultLinks.types";
 
 const ResultLinks: React.FC<ResultLinksProps> = ({ locations }) => {
   const router = useRouter();
-  const currentWoeid = router.query.woeid ? +router.query.woeid : undefined;
+  const currentLocation = router.query.name;
 
   return (
     <ul className={classes.results}>
       {locations.length > 0 &&
         locations.map((location) => (
           <li
-            className={currentWoeid === location.woeid ? classes.current : ""}
-            key={location.woeid}
+            className={currentLocation === location.name ? classes.current : ""}
+            key={location.id}
           >
-            <Link href={`/${location.woeid}`}>{location.title}</Link>
+            <Link href={`/${location.name}`}>{location.name}</Link>
           </li>
         ))}
     </ul>

@@ -1,18 +1,18 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-import { currentWeather } from "./weatherSlice.types";
+import { currentWeather, responseCurrent } from "./weatherSlice.types";
 
 export const fetchWeatherByLocation = createAsyncThunk<
-  currentWeather,
+  responseCurrent,
   string,
   {
     rejectValue: string;
   }
->("weather/fetchWeather", async (woeid, { rejectWithValue }) => {
+>("weather/fetchWeather", async (name, { rejectWithValue }) => {
   try {
-    const response = await axios.get<currentWeather>(
-      `${process.env.proxyUrl}/${process.env.weatherApiUrl}/location/${woeid}/`
+    const response = await axios.get<responseCurrent>(
+      `${process.env.weatherApiUrl}/forecast.json?key=${process.env.weatherApiKey}&q=${name}&days=3`
     );
 
     return response.data;

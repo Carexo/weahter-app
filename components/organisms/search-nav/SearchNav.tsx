@@ -27,7 +27,7 @@ const SearchNav: React.FC = () => {
   };
 
   const handleSearch = (name: string) => {
-    dispatch(searchLocations({ location: { name: name, type: "name" } }));
+    dispatch(searchLocations(name));
   };
 
   return (

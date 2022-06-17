@@ -1,18 +1,21 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
-  reactStrictMode: true,
-  env: {
-    weatherApiUrl: "https://www.metaweather.com/api",
-    proxyUrl: "https://still-journey-55420.herokuapp.com",
-  },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/44418",
-        permanent: true,
-      },
-    ];
-  },
+    reactStrictMode: true,
+    env: {
+        weatherApiUrl: "https://api.weatherapi.com/v1",
+        weatherApiKey: "61a0653c712244238a9160422221706",
+    },
+    images: {
+        domains: ["cdn.weatherapi.com"]
+    },
+    async redirects() {
+        return [
+            {
+                source: "/",
+                destination: "/London",
+                permanent: true,
+            },
+        ];
+    },
 };

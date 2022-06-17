@@ -1,60 +1,113 @@
 export interface weatherState {
-  currentWeather: Partial<currentWeather>;
-  temperatureUnit: { currentUnit: "celsius" | "fahrenheit"; iconPath: string };
-  status: { type: "pending" | "loading" | "error"; message?: string };
+    data: Partial<currentWeather>;
+    temperatureUnit: { currentUnit: "celsius" | "fahrenheit"; iconPath: string };
+    status: { type: "pending" | "loading" | "error"; message?: string };
 }
 
-export interface weatherForward {
-  short_date: string;
-  id: number;
-  weather_state_name: string;
-  weather_state_abbr: string;
-  wind_direction_compass:
-    | "N"
-    | "NNE"
-    | "NE"
-    | "ENE"
-    | "E"
-    | "ESE"
-    | "SE"
-    | "SSE"
-    | "S"
-    | "SSW"
-    | "SW"
-    | "WSW"
-    | "W"
-    | "WNW"
-    | "NW"
-    | "NNW";
-  created: string;
-  applicable_date: string;
-  min_temp: number;
-  max_temp: number;
-  the_temp: number;
-  wind_speed: number;
-  wind_direction: number;
-  air_pressure: number;
-  humidity: number;
-  visibility: number;
-  predictability: number;
+export interface responseForecast {
+    date: string;
+    day: {
+        maxtemp_c: number;
+        maxtemp_f: number;
+        mintemp_c: number;
+        mintemp_f: number;
+        condition: {
+            icon: string;
+            text: string;
+        }
+    }
+}
+
+export interface responseCurrent {
+    location: {
+        name: string;
+    };
+    current: {
+        last_updated: string;
+        temp: number;
+        temp_c: number;
+        temp_f: number;
+        condition: {
+            text: string,
+            icon: string;
+        };
+        wind_kph: number;
+        wind_dir:
+            | "N"
+            | "NNE"
+            | "NE"
+            | "ENE"
+            | "E"
+            | "ESE"
+            | "SE"
+            | "SSE"
+            | "S"
+            | "SSW"
+            | "SW"
+            | "WSW"
+            | "W"
+            | "WNW"
+            | "NW"
+            | "NNW";
+        pressure_mb: number;
+        humidity: number;
+        vis_km: number;
+        short_date: string;
+    };
+    forecast: {
+        forecastday: responseForecast[];
+    }
+}
+
+export interface forecast {
+    date: string;
+    maxtemp: number;
+    mintemp: number;
+    maxtemp_c: number;
+    maxtemp_f: number;
+    mintemp_c: number;
+    mintemp_f: number;
+    condition: {
+        icon: string;
+        text: string;
+    }
 }
 
 export interface currentWeather {
-  consolidated_weather: weatherForward[];
-  time: string;
-  sun_rise: string;
-  sun_set: string;
-  timezone_name: string;
-  parent: {
-    title: string;
-    location_type: string;
-    woeid: number;
-    latt_long: string;
-  };
-  sources: { title: string; slug: string; ulr: string; crawl_rate: number }[];
-  title: string;
-  location_type: string;
-  woeid: number;
-  latt_long: string;
-  timezone: string;
+    location: {
+        name: string;
+    };
+    current: {
+        last_updated: string;
+        temp: number;
+        temp_c: number;
+        temp_f: number;
+        condition: {
+            text: string,
+            icon: string;
+        };
+        wind_kph: number;
+        wind_dir:
+            | "N"
+            | "NNE"
+            | "NE"
+            | "ENE"
+            | "E"
+            | "ESE"
+            | "SE"
+            | "SSE"
+            | "S"
+            | "SSW"
+            | "SW"
+            | "WSW"
+            | "W"
+            | "WNW"
+            | "NW"
+            | "NNW";
+        pressure_mb: number;
+        humidity: number;
+        vis_km: number;
+        short_date: string;
+    };
+    forecast: forecast[];
 }
