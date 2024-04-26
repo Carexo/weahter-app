@@ -1,8 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-import { currentWeather, responseCurrent } from "./weatherSlice.types";
+import { responseCurrent } from "./weatherSlice.types";
 
+// Transform the date of each forecast day into a short format
 export const fetchWeatherByLocation = createAsyncThunk<
   responseCurrent,
   string,

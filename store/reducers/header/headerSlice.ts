@@ -14,6 +14,7 @@ const headerSlice = createSlice({
   name: "header",
   initialState,
   reducers: {
+    // Reducers to closing and opening the navigation
     closeNav(state) {
       state.navIsOpen = false;
     },
@@ -21,8 +22,10 @@ const headerSlice = createSlice({
       state.navIsOpen = true;
     },
   },
+  // Define extra reducers for handling the laction search action
   extraReducers: (builder) => {
     builder.addCase(searchLocations.fulfilled, (state, action) => {
+      // Transform action payload to the format of state
       state.searchLocationsResult = action.payload.map((result) => ({
         id: result.id,
         name: result.name,
@@ -31,6 +34,7 @@ const headerSlice = createSlice({
       }));
       state.status = { type: "pending" };
     });
+    // Define pending and rejected cases for the searchLocations action
     builder.addCase(searchLocations.pending, (state) => {
       state.searchLocationsResult = [];
       state.status = { type: "loading" };
@@ -41,9 +45,14 @@ const headerSlice = createSlice({
   },
 });
 
+// Selectors to get the state data of navigation
 export const selectHeader = (state: RootState) => state.header.navIsOpen;
+
+// Selectors to get the search locations result
 export const selectSearchLocationsResult = (state: RootState) =>
   state.header.searchLocationsResult;
+
+// Selector to get the status of the search action
 export const selectStatus = (state: RootState) => state.header.status;
 
 export const { closeNav, openNav } = headerSlice.actions;

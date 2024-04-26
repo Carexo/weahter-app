@@ -9,6 +9,7 @@ import Typography from "../../atoms/typography/Typography";
 const Notification: React.FC<NotificationProps> = ({ type, message }) => {
   const [isShowed, setIsShowed] = useState(false);
 
+  // Use an effect to show the notification for 5 seconds when the component mounts
   useEffect(() => {
     setIsShowed(true);
     const timer = setTimeout(() => {
@@ -19,6 +20,7 @@ const Notification: React.FC<NotificationProps> = ({ type, message }) => {
     };
   }, []);
 
+  // Define the styles for the different states of the notification
   const style = {
     enter: classes["notification-enter"],
     enterActive: classes["notification-enter-active"],
