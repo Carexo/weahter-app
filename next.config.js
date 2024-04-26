@@ -2,6 +2,7 @@
 
 module.exports = {
     reactStrictMode: true,
+    output: "export",
     env: {
         weatherApiUrl: "https://api.weatherapi.com/v1",
         weatherApiKey: "61a0653c712244238a9160422221706",
