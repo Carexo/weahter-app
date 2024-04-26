@@ -2,8 +2,10 @@
 
 module.exports = {
   reactStrictMode: true,
-  images: {
-    unoptimized: true,
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
   },
   env: {
     weatherApiUrl: "https://api.weatherapi.com/v1",
